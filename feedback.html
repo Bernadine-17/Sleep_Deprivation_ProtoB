@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<!-- Created By CodingNepal -->
+<html lang="en" dir="ltr">
+	<head>
+		<meta charset="utf-8">	
+		<title>Feedback Page</title>
+		<link rel="stylesheet" href="style.css">
+    		<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+ 	</head>
+	
+	<body>	
+		<div class="pageheader">
+			<h1>Thank you for participating!</h1>
+		</div>
+		<div class="container">
+      			<div class="post">
+        			<div class="text">
+					<!-- Thank you for participating! -->
+				</div>
+			</div>
+			<div class="edit">
+				EDIT
+			</div>
+	<div class="star-widget">
+		<input type="radio" name="rate" id="rate-5">
+		<label for="rate-5" class="fas fa-star"></label>
+		<input type="radio" name="rate" id="rate-4">
+		<label for="rate-4" class="fas fa-star"></label>
+		<input type="radio" name="rate" id="rate-3">
+		<label for="rate-3" class="fas fa-star"></label>
+		<input type="radio" name="rate" id="rate-2">
+		<label for="rate-2" class="fas fa-star"></label>
+		<input type="radio" name="rate" id="rate-1">
+		<label for="rate-1" class="fas fa-star"></label>
+		<form action="#">
+			<header></header>
+			<h1>We would love to hear your feedback!</h1>
+			<div class="textarea">
+				<textarea cols="30" placeholder="Any comments?"></textarea>
+			</div>
+		  <br/>
+			<div class="btn">
+				<button type="submit">Post</button>
+			</div>
+	<!--<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdAPcJb55HIkDlb697LtCx_iWabTo2U25zhSajuQetsrTdS6Q/viewform?embedded=true" width="640" height="687" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+	If we want to embed the google form instead-->
+	<script>
+        	var docMod = document.lastModified; // loads last modified time stamp into docMod variable
+	        alert("This file last modified " + docMod); // generates alert box with time stamp. If annoying, comment out this entire line.
+		console.log("This file last modified " + docMod); // generates message in javaScript console (found in developers tools) with time stamp.
+		
+		const btn = document.querySelector("button");
+          	const post = document.querySelector(".post");
+          	const widget = document.querySelector(".star-widget");
+          	const editBtn = document.querySelector(".edit");
+          	btn.onclick = ()=>{
+            		widget.style.display = "none";
+            		post.style.display = "block";
+            		editBtn.onclick = ()=>{
+              			widget.style.display = "block";
+              			post.style.display = "none";
+            		}
+			return false;
+      		}
+	</script>
+			
+	<style>
+		@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+		*{
+		  margin: 0;
+		  padding: 0;
+		  box-sizing: border-box;
+		  font-family: 'Poppins', sans-serif;
+		}
+		html,body{
+		  display: grid;
+		  height: 100%;
+		  place-items: center;
+		  text-align: center;
+		  background: #75abe7;
+		/* #000 */
+			
+		}
+		.pageheader{
+		  font-size: 25px;
+		  color: #ffffff;
+		}
+		.container{
+		  position: relative;
+		  width: 400px;
+		  background: #75abe7;
+		  /* background: #111; */
+		  padding: 20px 30px;
+		  /* border: 1px solid #444;
+		  border-radius: 5px; */
+		  display: flex;
+		  align-items: center;
+		  justify-content: center;
+		  flex-direction: column;
+		}
+		.container .post{
+		  display: none;
+		}
+		.container .text{
+		  font-size: 25px;
+		  color: #ffffff;
+		  /* color: #666; */
+		  font-weight: 500;
+		}
+		.container .edit{
+		  position: absolute;
+		  right: 10px;
+		  top: 5px;
+		  font-size: 16px;
+		  color: #ffffff;
+		  /* color: #666; */
+		  font-weight: 500;
+		  cursor: pointer;
+		}
+		.container .edit:hover{
+		  text-decoration: underline;
+		}
+		.container .star-widget input{
+		  display: none;
+		}
+		.star-widget label{
+		  font-size: 40px;
+		  color: #444;
+		  padding: 10px;
+		  float: right;
+		  transition: all 0.2s ease;
+		}
+		
+		/* attempting to edit the h1 "we would love your feedback" */
+		.star-widget h1{
+		  font-size: 20px;
+		  color: #ffffff;
+		}
+		input:not(:checked) ~ label:hover,
+		input:not(:checked) ~ label:hover ~ label{
+		  color: #f6f3c0;
+		/* #fd4 */
+			
+		}
+		input:checked ~ label{
+		  color: #f6f3c0;
+		/* #fd4 */
+		}
+		input#rate-5:checked ~ label{
+		  color: #f6f3c0;
+		  text-shadow: 0 0 20px #f6f3c0;
+		/* #fe7, text shadow #952 */
+			
+		}
+		#rate-1:checked ~ form header:before{
+		  content: "It's terrible";
+		}
+		#rate-2:checked ~ form header:before{
+		  content: "It could use more work";
+		}
+		#rate-3:checked ~ form header:before{
+		  content: "It's okay";
+		}
+		#rate-4:checked ~ form header:before{
+		  content: "It's great";
+		}
+		#rate-5:checked ~ form header:before{
+		  content: "It's amazing!";
+		}
+		.container form{
+		  display: none;
+		}
+		input:checked ~ form{
+		  display: block;
+		}
+		form header{
+		  width: 100%;
+		  font-size: 25px;
+		  color: #fe7;
+		  font-weight: 500;
+		  margin: 5px 0 20px 0;
+		  text-align: center;
+		  transition: all 0.2s ease;
+		}
+		form .textarea{
+		  height: 100px;
+		  width: 100%;
+		  overflow: hidden;
+		}
+		form .textarea textarea{
+		  height: 100%;
+		  width: 100%;
+		  outline: none;
+		  color: #75abe7;
+		  /* color: #eee; */
+		  border: 1px solid #ffffff;
+		  background: #ffffff;
+		  /* border: 1px solid #333;
+		     background: #222; */
+		  padding: 10px;
+		  font-size: 17px;
+		  resize: none;
+		}
+		.textarea textarea:focus{
+		  border-color: #ffffff;
+		/* border-color: #444; */
+			
+		}
+		form .btn{
+		  height: 45px;
+		  width: 100%;
+		  margin: 15px 0;
+		}
+		form .btn button{
+		  height: 100%;
+		  width: 100%;
+		  border: 1px solid #ffffff;
+		  /* border: 1px soliid #444; */
+		  outline: none;
+		  background: #ffffff;
+		  color: #75abe7;
+		  /* background: #222;
+		     color: #999; */
+		  font-size: 17px;
+		  font-weight: 500;
+		  text-transform: uppercase;
+		  cursor: pointer;
+		  transition: all 0.3s ease;
+		}
+		form .btn button:hover{
+		  background: #48659c;
+		  /* background: #1b1b1b; */
+		}
+	</style>
+	</body>
+</html>
+  
